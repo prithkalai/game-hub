@@ -1,7 +1,8 @@
-import { useQuery } from "react-query";
+import { useInfiniteQuery, useQuery } from "react-query";
 import { GameQuery } from "../App";
 import apiClient from "../services/api-client";
 import APIclient, { FetchResponse } from "../services/api-client";
+import { all } from "axios";
 
 export interface Platform {
   id: number;
@@ -21,17 +22,21 @@ export interface Game {
 const getGames = new APIclient<Game>("/games");
 
 const useGames = (gameQuery: GameQuery) =>
-  useQuery<FetchResponse<Game>, Error>({
+  useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: ["games", gameQuery],
-    queryFn: () =>
+    queryFn: ({ pageParam = 1 }) =>
       getGames.getData({
         params: {
+          page: pageParam,
           genres: gameQuery.genre?.id,
           parent_platforms: gameQuery.platform?.id,
           ordering: gameQuery.sortOrder,
           search: gameQuery.searchText,
         },
       }),
+    getNextPageParam(lastPage, allPages) {
+      return lastPage.next && allPages.length + 1;
+    },
   });
 
 export default useGames;

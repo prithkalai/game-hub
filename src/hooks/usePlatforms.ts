@@ -1,6 +1,5 @@
 import { useQuery } from "react-query";
 import APIclient from "../services/api-client";
-import { FetchResponse } from "../services/api-client";
 
 interface Platform {
   id: number;
