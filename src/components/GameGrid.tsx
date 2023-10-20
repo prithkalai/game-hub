@@ -28,7 +28,7 @@ const GameGrid = ({ gameQuery }: Props) => {
         next={fetchNextPage}
         loader={<Spinner />}
         hasMore={!!hasNextPage}
-        scrollThreshold={0.95}
+        scrollThreshold={0.9}
       >
         <SimpleGrid
           columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
