@@ -8,7 +8,7 @@ import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 const GameGrid = () => {
-  const gameQuery = useGameQueryStore((s) => s.gameQuery);
+  const gameQuery = useGameQueryStore((s: any) => s.gameQuery);
   const { data, error, isLoading, fetchNextPage, hasNextPage } =
     useGames(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6];

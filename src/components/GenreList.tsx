@@ -13,8 +13,8 @@ import getCroppedImageUrl from "../services/image-url";
 
 const GenreList = () => {
   const { data, isLoading, error } = useGenres();
-  const selectedGenre = useGameQueryStore((s) => s.gameQuery.genre);
-  const onSelectGenre = useGameQueryStore((s) => s.setGenreId);
+  const selectedGenre = useGameQueryStore((s: any) => s.gameQuery.genre);
+  const onSelectGenre = useGameQueryStore((s: any) => s.setGenreId);
 
   if (error) return null;
 

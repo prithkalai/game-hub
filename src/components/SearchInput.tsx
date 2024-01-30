@@ -5,7 +5,7 @@ import useGameQueryStore from "../data/gameQueryStore";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
-  const onSearch = useGameQueryStore((s) => s.setSearchText);
+  const onSearch = useGameQueryStore((s: any) => s.setSearchText);
 
   return (
     <form

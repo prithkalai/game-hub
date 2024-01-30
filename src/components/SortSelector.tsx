@@ -3,8 +3,8 @@ import { BsChevronDown } from "react-icons/bs";
 import useGameQueryStore from "../data/gameQueryStore";
 
 const SortSelector = () => {
-  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
-  const onSelectSortOrder = useGameQueryStore((s) => s.setSortOrder);
+  const sortOrder = useGameQueryStore((s: any) => s.gameQuery.sortOrder);
+  const onSelectSortOrder = useGameQueryStore((s: any) => s.setSortOrder);
   const sortOrders = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date added" },
