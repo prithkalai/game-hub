@@ -1,8 +1,7 @@
-import { useInfiniteQuery, useQuery } from "react-query";
-import { GameQuery } from "../App";
-import apiClient from "../services/api-client";
+import { useInfiniteQuery } from "react-query";
+
+import { GameQuery } from "../data/gameQueryStore";
 import APIclient, { FetchResponse } from "../services/api-client";
-import { all } from "axios";
 
 export interface Platform {
   id: number;
