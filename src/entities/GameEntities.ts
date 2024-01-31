@@ -34,3 +34,9 @@ export interface Publisher {
   name: string;
   slug: string;
 }
+export interface Trailer {
+  id: number;
+  name: string;
+  preview: string;
+  data: { "480": string; max: string };
+}
