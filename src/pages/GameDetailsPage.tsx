@@ -1,20 +1,12 @@
-import { useNavigate, useParams } from "react-router-dom";
-import useGameDetails from "../hooks/useGameDetails";
-import {
-  Box,
-  Button,
-  Heading,
-  Spinner,
-  Text,
-  useBoolean,
-} from "@chakra-ui/react";
+import { Box, Heading, Spinner } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 import ExpandableText from "../components/ExpandableText";
+import GameAttributes from "../components/GameAttributes";
+import useGameDetails from "../hooks/useGameDetails";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
-
   const { data, isLoading, isError } = useGameDetails(slug!);
-  const [flag, setFlag] = useBoolean();
 
   if (isLoading) return <Spinner />;
 
@@ -24,6 +16,7 @@ const GameDetailsPage = () => {
     <Box padding={5}>
       <Heading>{data?.name}</Heading>
       <ExpandableText>{data?.description_raw}</ExpandableText>
+      <GameAttributes data={data} />
     </Box>
   );
 };
