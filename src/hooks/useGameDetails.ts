@@ -1,13 +1,6 @@
 import { useQuery } from "react-query";
-import APIclient, { FetchResponse } from "../services/api-client";
-
-interface GameDetails {
-  id: number;
-  name: string;
-  slug: string;
-  description: string;
-  description_raw: string;
-}
+import { GameDetails } from "../entities/GameEntities";
+import APIclient from "../services/api-client";
 
 const getGameDetails = new APIclient<GameDetails>("/games");
 const useGameDetails = (gameSlug: string | number) => {

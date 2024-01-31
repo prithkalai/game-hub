@@ -2,22 +2,12 @@ import { useInfiniteQuery } from "react-query";
 
 import { GameQuery } from "../data/gameQueryStore";
 import APIclient, { FetchResponse } from "../services/api-client";
+import { Game } from "../entities/GameEntities";
 
 export interface Platform {
   id: number;
   name: string;
   slug: string;
-}
-
-export interface Game {
-  id: number;
-  name: string;
-  slug: string;
-  description: string;
-  background_image: string;
-  parent_platforms: { platform: Platform }[];
-  metacritic: number;
-  rating_top: number;
 }
 
 const getGames = new APIclient<Game>("/games");

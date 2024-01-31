@@ -1,11 +1,6 @@
 import { useQuery } from "react-query";
 import APIclient from "../services/api-client";
-
-interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import { Platform } from "../entities/GameEntities";
 
 const getPlatform = new APIclient<Platform>("/platforms/lists/parents");
 

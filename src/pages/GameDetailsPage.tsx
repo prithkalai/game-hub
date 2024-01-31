@@ -1,11 +1,15 @@
 import { useNavigate, useParams } from "react-router-dom";
 import useGameDetails from "../hooks/useGameDetails";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Spinner, Text } from "@chakra-ui/react";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
 
-  const { data } = useGameDetails(slug!);
+  const { data, isLoading, isError } = useGameDetails(slug!);
+
+  if (isLoading) return <Spinner />;
+
+  if (isError || !data) throw new Error();
 
   return (
     <Box padding={5}>
