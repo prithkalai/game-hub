@@ -11,8 +11,10 @@ const GameDetailsCard = ({ heading, data }: Props) => {
       <Text fontWeight="bold" color="gray.600" fontSize="lg">
         {heading}
       </Text>
-      {data.map((index) => (
-        <Text fontSize="md">{index}</Text>
+      {data.map((value, index) => (
+        <Text key={index} fontSize="md">
+          {value}
+        </Text>
       ))}
     </Box>
   );

@@ -2,9 +2,9 @@ import { Box, Heading, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
-import useGameDetails from "../hooks/useGameDetails";
+import ScreenshotGrid from "../components/ScreenshotGrid";
 import VideoPlayer from "../components/VideoPlayer";
-import useTrailer from "../hooks/useTrailer";
+import useGameDetails from "../hooks/useGameDetails";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -21,6 +21,7 @@ const GameDetailsPage = () => {
       <GameAttributes data={data} />
 
       <VideoPlayer slug={slug} />
+      <ScreenshotGrid slug={slug} />
     </Box>
   );
 };
