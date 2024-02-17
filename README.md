@@ -17,7 +17,7 @@ GameHub is a video game discovery web app that helps you find new and interestin
 - **RAWG Game API:** For fetching comprehensive and real-time game data.
 
 ## App Screenshot
-<img src="gamehub.jpg" alt="GameHub" width="500"/><br />
+<img src="game-hub.jpg" alt="GameHub" width="500"/><br />
 
 ## Getting Started
 
