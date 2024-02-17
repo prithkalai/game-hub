@@ -16,6 +16,9 @@ GameHub is a video game discovery web app that helps you find new and interestin
 - **Vercel:** For deploying and hosting the application, ensuring high availability and global access.
 - **RAWG Game API:** For fetching comprehensive and real-time game data.
 
+## App Screenshot
+<img src="gamehub.jpg" alt="GameHub" width="500"/><br />
+
 ## Getting Started
 
 To get started with GameHub, follow these steps:
